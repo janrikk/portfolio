@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Artist Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">YOUR NAME</div>
+        <ul class="menu">
+            <li class="active" onclick="showTab('bio')">Bio</li>
+            <li onclick="showTab('works')">Works</li>
+            <li onclick="showTab('demos')">New Project Demos</li>
+            <li onclick="showTab('texts')">Texts</li>
+            <li onclick="showTab('contact')">Contact</li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section id="bio" class="tab-content active-tab">
+            <div class="text-block">
+                <h1>Artist Statement</h1>
+                <p>I am a sound artist exploring the intersection of silence and noise. My work investigates acoustic ecology and the materiality of sound.</p>
+            </div>
+            <div class="mini-video float-right">
+                <video src="assets/video1.mp4" loop muted autoplay></video>
+                <span class="caption">Field recording, 2024</span>
+            </div>
+        </section>
+
+        <section id="works" class="tab-content">
+            <div class="gallery-grid">
+                <div class="work-item">
+                    <video src="assets/video2.mp4" loop muted onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <h3>Installation A</h3>
+                    <p>2023, Multi-channel audio</p>
+                </div>
+                <div class="work-item">
+                    <video src="assets/video3.mp4" loop muted onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <h3>Performance B</h3>
+                    <p>2022, Live coding</p>
+                </div>
+                <div class="work-item">
+                    <video src="assets/video1.mp4" loop muted onmouseover="this.play()" onmouseout="this.pause()"></video>
+                    <h3>Residency C</h3>
+                    <p>2021, Synthesis</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demos" class="tab-content">
+            <div class="audio-interface">
+                <h2>Project: Echos (WIP)</h2>
+                <div class="track-list">
+                    <div class="track" onclick="playTrack('assets/demo1.mp3', this)">
+                        <span class="play-icon">▶</span>
+                        <span class="track-title">Sketch 01: Granular Texture</span>
+                        <span class="track-duration">03:12</span>
+                    </div>
+                    <div class="track" onclick="playTrack('assets/demo2.mp3', this)">
+                        <span class="play-icon">▶</span>
+                        <span class="track-title">Sketch 02: Low Frequency</span>
+                        <span class="track-duration">04:45</span>
+                    </div>
+                </div>
+                <audio id="main-audio-player"></audio>
+                <div id="now-playing">Select a track to listen...</div>
+            </div>
+        </section>
+
+        <section id="texts" class="tab-content">
+            <article>
+                <h2>On Listening</h2>
+                <p>Ideally, sound art is not heard, but felt...</p>
+                <a href="#">Read full PDF</a>
+            </article>
+        </section>
+
+        <section id="contact" class="tab-content">
+            <p>Email: artist@example.com</p>
+            <p>Instagram: @yourhandle</p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

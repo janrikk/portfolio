@@ -1,0 +1,99 @@
+/* Reset & Base Styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.logo { font-weight: bold; letter-spacing: 1px; }
+
+.menu { list-style: none; display: flex; gap: 2rem; }
+
+.menu li {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.menu li:hover, .menu li.active { opacity: 1; text-decoration: underline; }
+
+/* Tabs Logic */
+.tab-content { display: none; animation: fadeIn 0.5s; }
+.active-tab { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Video Miniatures Styling */
+video {
+    width: 100%;
+    filter: grayscale(100%); /* Artistic touch: B&W until interaction */
+    transition: filter 0.3s;
+}
+
+video:hover { filter: grayscale(0%); }
+
+.mini-video {
+    width: 200px;
+    margin: 1rem;
+}
+
+.float-right { float: right; margin-left: 3rem; }
+
+.caption {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Works Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 4rem;
+}
+
+.work-item h3 { font-size: 1rem; margin-top: 1rem; font-weight: normal; }
+.work-item p { font-size: 0.8rem; color: #888; }
+
+/* Audio Interface Styling */
+.audio-interface {
+    border: 1px solid #eee;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+.track {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+}
+
+.track:hover { background-color: #fafafa; }
+.play-icon { margin-right: 1rem; }
+.playing .play-icon { color: red; } /* Visual indicator for playing track */
+
+#now-playing {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #aaa;
+}
